@@ -1,5 +1,5 @@
-COUNT = 0
-PREV = 1000
+count = 0
+prev = 1000
 
 with open("data", "r", encoding="utf-8") as f:
     data = f.read().split()
@@ -8,13 +8,13 @@ with open("data", "r", encoding="utf-8") as f:
         if i-2 >= 0:
             num = int(data[i-2]) + int(data[i-1]) + int(data[i])
 
-            if num > int(PREV):
+            if num > int(prev):
                 print(num, "(+++++)")
-                PREV = num
-                COUNT += 1
+                prev = num
+                count += 1
 
-            if num < int(PREV):
+            if num < int(prev):
                 print(num, "(-----)")
-                PREV = num
+                prev = num
 
-print(COUNT)
+print(count)

@@ -1,5 +1,5 @@
-POSITION = 0
-DEPTH = 0
+position = 0
+depth = 0
 
 
 with open("data", "r", encoding="utf-8") as f:
@@ -9,13 +9,13 @@ with open("data", "r", encoding="utf-8") as f:
         command, unit = i.split(" ")
 
         if command == "forward":
-            POSITION += int(unit)
+            position += int(unit)
 
         if command == "down":
-            DEPTH += int(unit)
+            depth += int(unit)
 
         if command == "up":
-            DEPTH -= int(unit)
+            depth -= int(unit)
 
 
-print(POSITION * DEPTH)
+print(position * depth)

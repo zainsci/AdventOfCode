@@ -1,21 +1,21 @@
-COUNT = 0
-PREV = 0
+count = 0
+prev = 0
 
 with open("data", "r", encoding="utf-8") as f:
     data = f.read().split()
-    PREV = data[0]
+    prev = data[0]
 
     for n in data:
-        if n == PREV:
+        if n == prev:
             print(n, "N/A")
 
-        if int(n) > int(PREV):
+        if int(n) > int(prev):
             print(n, "(+++++)")
-            PREV = n
-            COUNT += 1
+            prev = n
+            count += 1
 
-        if int(n) < int(PREV):
+        if int(n) < int(prev):
             print(n, "(-----)")
-            PREV = n
+            prev = n
 
-print(COUNT)
+print(count)

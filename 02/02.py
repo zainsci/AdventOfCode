@@ -1,6 +1,6 @@
-POSITION = 0
-DEPTH = 0
-AIM = 0
+position = 0
+depth = 0
+aim = 0
 
 with open("data", "r", encoding="utf-8") as f:
     data = f.read().split("\n")
@@ -9,14 +9,14 @@ with open("data", "r", encoding="utf-8") as f:
         command, unit = i.split(" ")
 
         if command == "forward":
-            POSITION += int(unit)
-            DEPTH += AIM*int(unit)
+            position += int(unit)
+            depth += aim*int(unit)
 
         if command == "down":
-            AIM += int(unit)
+            aim += int(unit)
 
         if command == "up":
-            AIM -= int(unit)
+            aim -= int(unit)
 
 
-print(POSITION * DEPTH)
+print(position * depth)
