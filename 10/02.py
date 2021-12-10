@@ -1,3 +1,5 @@
+from collections import deque
+
 POINTS = {
     ")": 1,
     "]": 2,
@@ -18,7 +20,7 @@ BRACKETS = {
 
 
 def get_lines(line):
-    stack = []
+    stack = deque()
     opening = ["(", "[", "{", "<"]
     closing = [")", "]", "}", ">"]
     for i in range(len(line)):
@@ -43,7 +45,7 @@ def count_points(data):
     scores = []
     for line in incomplete_lines:
         count = 0
-        line = line[::-1]
+        line.reverse()
         for b in line:
             count *= 5
             count += POINTS[BRACKETS[b]]

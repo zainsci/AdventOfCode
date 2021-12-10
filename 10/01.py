@@ -1,3 +1,5 @@
+from collections import deque
+
 POINTS = {
     ")": 3,
     "]": 57,
@@ -14,7 +16,7 @@ BRACKETS = {
 
 
 def get_point(line):
-    stack = []
+    stack = deque()
     opening = ["(", "[", "{", "<"]
     closing = [")", "]", "}", ">"]
     for i in range(len(line)):
